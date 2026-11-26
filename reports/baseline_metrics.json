@@ -1,0 +1,121 @@
+{
+  "fecha": "2026-11-12",
+  "semilla": 42,
+  "particion": {
+    "train": 3649,
+    "val": 781,
+    "test": 782
+  },
+  "regresion": {
+    "objetivo": "Yield (t/ha); entrenado en log1p(Yield_w), evaluado en Yield real",
+    "baseline_oficial": "Regresion_Lineal_OLS",
+    "metricas": {
+      "Dummy_mediana|train": {
+        "RMSE": 12.570985,
+        "MAE": 3.826471,
+        "R2": -0.077516,
+        "R2_log": -0.13586
+      },
+      "Dummy_mediana|val": {
+        "RMSE": 12.278678,
+        "MAE": 3.877162,
+        "R2": -0.084781,
+        "R2_log": -0.142439
+      },
+      "Dummy_mediana|test": {
+        "RMSE": 19.229978,
+        "MAE": 4.63576,
+        "R2": -0.049623,
+        "R2_log": -0.139982
+      },
+      "Regresion_Lineal_OLS|train": {
+        "RMSE": 6.96708,
+        "MAE": 1.940474,
+        "R2": 0.669031,
+        "R2_log": 0.818137
+      },
+      "Regresion_Lineal_OLS|val": {
+        "RMSE": 5.450276,
+        "MAE": 1.820205,
+        "R2": 0.786265,
+        "R2_log": 0.835503
+      },
+      "Regresion_Lineal_OLS|test": {
+        "RMSE": 15.210694,
+        "MAE": 2.707919,
+        "R2": 0.34329,
+        "R2_log": 0.797554
+      }
+    },
+    "meta_colab3_RMSE_val_max": 4.360221
+  },
+  "clasificacion": {
+    "objetivo": "Yield_class (Bajo/Medio/Alto, terciles por cultivo aprendidos en train)",
+    "baseline_oficial": "Regresion_Logistica",
+    "metricas": {
+      "Dummy_mas_frecuente|train": {
+        "Accuracy": 0.339545,
+        "Precision_macro": 0.113182,
+        "Recall_macro": 0.333333,
+        "F1_macro": 0.168985,
+        "AUC_ROC_ovr": 0.5
+      },
+      "Dummy_mas_frecuente|val": {
+        "Accuracy": 0.331626,
+        "Precision_macro": 0.110542,
+        "Recall_macro": 0.333333,
+        "F1_macro": 0.166026,
+        "AUC_ROC_ovr": 0.5
+      },
+      "Dummy_mas_frecuente|test": {
+        "Accuracy": 0.324808,
+        "Precision_macro": 0.108269,
+        "Recall_macro": 0.333333,
+        "F1_macro": 0.163449,
+        "AUC_ROC_ovr": 0.5
+      },
+      "Dummy_estratificado|train": {
+        "Accuracy": 0.338449,
+        "Precision_macro": 0.338264,
+        "Recall_macro": 0.338573,
+        "F1_macro": 0.338369,
+        "AUC_ROC_ovr": 0.50388
+      },
+      "Dummy_estratificado|val": {
+        "Accuracy": 0.323944,
+        "Precision_macro": 0.322617,
+        "Recall_macro": 0.322568,
+        "F1_macro": 0.322474,
+        "AUC_ROC_ovr": 0.49214
+      },
+      "Dummy_estratificado|test": {
+        "Accuracy": 0.306905,
+        "Precision_macro": 0.30618,
+        "Recall_macro": 0.307125,
+        "F1_macro": 0.306507,
+        "AUC_ROC_ovr": 0.479996
+      },
+      "Regresion_Logistica|train": {
+        "Accuracy": 0.541518,
+        "Precision_macro": 0.531961,
+        "Recall_macro": 0.539051,
+        "F1_macro": 0.530332,
+        "AUC_ROC_ovr": 0.728048
+      },
+      "Regresion_Logistica|val": {
+        "Accuracy": 0.536492,
+        "Precision_macro": 0.519874,
+        "Recall_macro": 0.525809,
+        "F1_macro": 0.516667,
+        "AUC_ROC_ovr": 0.70481
+      },
+      "Regresion_Logistica|test": {
+        "Accuracy": 0.535806,
+        "Precision_macro": 0.526697,
+        "Recall_macro": 0.52927,
+        "F1_macro": 0.524158,
+        "AUC_ROC_ovr": 0.705012
+      }
+    }
+  }
+}

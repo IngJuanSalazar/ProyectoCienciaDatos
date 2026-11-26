@@ -1,0 +1,6 @@
+variables,n,chi2,gl,p_valor,V_Cramer,pct_celdas_esp<5,decision (alfa=0.05)
+Season x State,5283,3581.5971794568322,145,0.0,0.36822482307379023,29.44,Rechaza H0 (dependientes)
+Season x Crop,2599,2008.4691220022198,70,0.0,0.3931374693364221,1.11,Rechaza H0 (dependientes)
+Yield_class x Season,5283,103.8291221541312,10,9.307556750781175e-18,0.09912981322856314,0.0,Rechaza H0 (dependientes)
+Yield_class x State,5283,1178.040183152654,58,1.960829939066148e-208,0.33390640448138564,0.0,Rechaza H0 (dependientes)
+Yield_class x Rain_level,5283,158.79051611653065,4,2.6564886798808746e-33,0.12259054533471908,0.0,Rechaza H0 (dependientes)

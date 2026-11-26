@@ -1,0 +1,11 @@
+Variable,Tipo de dato (pandas),Tipo estadístico,Descripción funcional,Unidad,Rango / valores permitidos,N únicos,% nulos
+Crop,object,Cualitativa nominal,Nombre del cultivo sembrado,-,"55 categorías: Arecanut, Arhar/Tur, Bajra, Banana, Barley, Black pepper ...",55,0.0
+Crop_Year,int64,Cuantitativa discreta (temporal),Año agrícola de la cosecha,año,"[2015, 2020]",6,0.0
+Season,object,Cualitativa nominal,"Temporada de siembra: Kharif (monzón, jun-oct), Rabi (invierno, oct-mar), Summer, Autumn, Winter, Whole Year",-,"6 categorías: Autumn, Kharif, Rabi, Summer, Whole Year, Winter",6,0.0
+State,object,Cualitativa nominal,Estado o territorio de la Unión de India,-,"30 categorías: Andhra Pradesh, Arunachal Pradesh, Assam, Bihar, Chhattisgarh, Delhi ...",30,0.0
+Area,float64,Cuantitativa continua,Superficie sembrada con el cultivo,hectáreas,"[1.00 ; 10,216,517.00]",4263,0.0
+Production,int64,Cuantitativa continua,Producción cosechada (el coco se reporta en número de nueces),toneladas métricas,"[0.00 ; 5,962,500,000.00]",4331,0.0
+Annual_Rainfall,float64,Cuantitativa continua,Precipitación anual del estado en ese año,mm,"[351.80 ; 5,649.10]",150,0.0
+Fertilizer,float64,Cuantitativa continua,Cantidad total de fertilizante aplicada al cultivo,kg,"[153.25 ; 1,754,788,960.00]",4902,0.0
+Pesticide,float64,Cuantitativa continua,Cantidad total de pesticida aplicada al cultivo,kg,"[0.33 ; 3,780,111.29]",4797,0.0
+Yield,float64,Cuantitativa continua,Rendimiento = Production / Area (variable objetivo de regresión),t/ha,"[0.00 ; 16,935.06]",4281,0.0

@@ -1,0 +1,226 @@
+{
+  "fecha": "2026-11-12",
+  "semilla": 42,
+  "regresion": {
+    "mejor_modelo": "XGBoost",
+    "meta_RMSE_val": 4.360221,
+    "cumple_meta": true,
+    "validacion_cruzada": {
+      "ElasticNet": {
+        "RMSE_CV": 5.954537559745326,
+        "parametros": {
+          "alpha": "0.0001",
+          "l1_ratio": "1.0"
+        }
+      },
+      "XGBoost": {
+        "RMSE_CV": 3.3726889738150967,
+        "parametros": {
+          "subsample": "0.7",
+          "reg_lambda": "1",
+          "n_estimators": "900",
+          "min_child_weight": "1",
+          "max_depth": "8",
+          "learning_rate": "0.1",
+          "colsample_bytree": "1.0"
+        }
+      }
+    },
+    "train_val": {
+      "Baseline_OLS|train": {
+        "RMSE": 6.967080077844719,
+        "MAE": 1.940474215440737,
+        "R2": 0.6690313591010915,
+        "R2_log": 0.8181367074655841
+      },
+      "Baseline_OLS|val": {
+        "RMSE": 5.450276217328146,
+        "MAE": 1.820205023469806,
+        "R2": 0.7862649388585587,
+        "R2_log": 0.8355034770745617
+      },
+      "ElasticNet|train": {
+        "RMSE": 6.9835415021652425,
+        "MAE": 1.9444631504273502,
+        "R2": 0.6674655233300957,
+        "R2_log": 0.818035256100541
+      },
+      "ElasticNet|val": {
+        "RMSE": 5.483308181205928,
+        "MAE": 1.8265642236517678,
+        "R2": 0.7836663611950926,
+        "R2_log": 0.8351582920464674
+      },
+      "XGBoost|train": {
+        "RMSE": 2.580460317026462,
+        "MAE": 0.10247879610728297,
+        "R2": 0.9545975162534074,
+        "R2_log": 0.9964881456129012
+      },
+      "XGBoost|val": {
+        "RMSE": 2.969382868754898,
+        "MAE": 0.8387023722134299,
+        "R2": 0.9365588361467742,
+        "R2_log": 0.9500870951472793
+      },
+      "MLP_PyTorch|train": {
+        "RMSE": 4.5914150014334805,
+        "MAE": 0.7805990600171991,
+        "R2": 0.8562597685596969,
+        "R2_log": 0.9646377482335771
+      },
+      "MLP_PyTorch|val": {
+        "RMSE": 2.9457700442188233,
+        "MAE": 0.9534117996888511,
+        "R2": 0.9375638051353168,
+        "R2_log": 0.9476071997249775
+      }
+    },
+    "test": {
+      "Baseline_OLS": {
+        "RMSE": 15.210694224026563,
+        "MAE": 2.70791853089822,
+        "R2": 0.343290011540033,
+        "R2_log": 0.7975535951591407
+      },
+      "XGBoost": {
+        "RMSE": 13.72421959307501,
+        "MAE": 1.4217867395923318,
+        "R2": 0.4653730261587625,
+        "R2_log": 0.9397815775898103
+      },
+      "MLP_PyTorch": {
+        "RMSE": 13.3733340831552,
+        "MAE": 1.5158398741982102,
+        "R2": 0.49236104901755795,
+        "R2_log": 0.9350474082699203
+      }
+    }
+  },
+  "clasificacion": {
+    "mejor_modelo": "XGBoost",
+    "validacion_cruzada": {
+      "RandomForest": {
+        "F1_CV": 0.6766366412686857,
+        "parametros": {
+          "n_estimators": "200",
+          "min_samples_leaf": "1",
+          "max_features": "sqrt",
+          "max_depth": "None"
+        }
+      },
+      "XGBoost": {
+        "F1_CV": 0.6655048341500909,
+        "parametros": {
+          "subsample": "0.85",
+          "n_estimators": "900",
+          "min_child_weight": "1",
+          "max_depth": "6",
+          "learning_rate": "0.1",
+          "colsample_bytree": "0.5"
+        }
+      }
+    },
+    "train_val": {
+      "Baseline_Logistica|train": {
+        "Accuracy": 0.5415182241710057,
+        "Precision_macro": 0.531961424631362,
+        "Recall_macro": 0.5390507857567051,
+        "F1_macro": 0.5303324928013832,
+        "AUC_ROC_ovr": 0.7280478936373838
+      },
+      "Baseline_Logistica|val": {
+        "Accuracy": 0.5364916773367477,
+        "Precision_macro": 0.5198735590560686,
+        "Recall_macro": 0.525808825542868,
+        "F1_macro": 0.5166669995026479,
+        "AUC_ROC_ovr": 0.704810424830169
+      },
+      "RandomForest|train": {
+        "Accuracy": 1.0,
+        "Precision_macro": 1.0,
+        "Recall_macro": 1.0,
+        "F1_macro": 1.0,
+        "AUC_ROC_ovr": 1.0
+      },
+      "RandomForest|val": {
+        "Accuracy": 0.7131882202304738,
+        "Precision_macro": 0.7102308290877765,
+        "Recall_macro": 0.7087380313444144,
+        "F1_macro": 0.7090697673198206,
+        "AUC_ROC_ovr": 0.8636803208646517
+      },
+      "XGBoost|train": {
+        "Accuracy": 0.9997259523157029,
+        "Precision_macro": 0.9997311827956988,
+        "Recall_macro": 0.9997276688453159,
+        "F1_macro": 0.9997293159557034,
+        "AUC_ROC_ovr": 0.9999993261909575
+      },
+      "XGBoost|val": {
+        "Accuracy": 0.7131882202304738,
+        "Precision_macro": 0.7111541897810358,
+        "Recall_macro": 0.7097692297160383,
+        "F1_macro": 0.7101609093009863,
+        "AUC_ROC_ovr": 0.8662367407111297
+      }
+    },
+    "test": {
+      "Baseline_Logistica": {
+        "Accuracy": 0.5358056265984654,
+        "Precision_macro": 0.526697241637819,
+        "Recall_macro": 0.5292704199456137,
+        "F1_macro": 0.5241583710350151,
+        "AUC_ROC_ovr": 0.7050121114968441
+      },
+      "XGBoost": {
+        "Accuracy": 0.6982097186700768,
+        "Precision_macro": 0.6938025210084033,
+        "Recall_macro": 0.6952265494829301,
+        "F1_macro": 0.6940837443730484,
+        "AUC_ROC_ovr": 0.8608459514011008
+      }
+    }
+  },
+  "mlp": {
+    "capas": [
+      128,
+      64
+    ],
+    "dropout": 0.3,
+    "mejor_epoca": 60
+  },
+  "clustering": {
+    "variables": [
+      "log_Area",
+      "log_Rainfall",
+      "Yield_rel"
+    ],
+    "K": 4,
+    "silueta_por_K": {
+      "2": 0.2754796950732981,
+      "3": 0.27603268775818973,
+      "4": 0.28473767688170143,
+      "5": 0.25123712009985044,
+      "6": 0.25370120955328807,
+      "7": 0.2577749458004711,
+      "8": 0.25232280221808057,
+      "9": 0.24450495195626415,
+      "10": 0.23734153276081585
+    },
+    "silueta_kmeans": 0.28473767688170143,
+    "silueta_aglomerativo": 0.24905177994729016,
+    "silueta_test": 0.2741019910821242
+  },
+  "importancia_regresion_pct": {
+    "Crop_group": 36.5,
+    "Crop": 33.5,
+    "State": 13.0,
+    "Area": 6.5,
+    "Season": 4.099999904632568,
+    "Annual_Rainfall": 3.799999952316284,
+    "Rain_anomaly": 1.100000023841858,
+    "Fert_por_ha": 0.8999999761581421,
+    "Pest_por_ha": 0.699999988079071
+  }
+}

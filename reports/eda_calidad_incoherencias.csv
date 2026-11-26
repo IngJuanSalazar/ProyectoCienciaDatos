@@ -1,0 +1,9 @@
+,n_registros,pct
+Area <= 0,0,0.0
+Production = 0 (posible cosecha perdida o dato no reportado),29,0.5489
+Yield = 0,30,0.5679
+Yield > 0 con Production = 0,1,0.0189
+Yield difiere > 5 % de Production/Area,2517,47.6434
+Algún valor numérico negativo,0,0.0
+"Crop_Year fuera de [2015, 2020]",0,0.0
+Annual_Rainfall = 0,0,0.0

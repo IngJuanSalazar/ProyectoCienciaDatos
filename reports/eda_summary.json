@@ -1,0 +1,131 @@
+{
+  "dataset": "Crop Yield in Indian States Dataset",
+  "url": "https://www.kaggle.com/datasets/akshatgupta7/crop-yield-in-indian-states-dataset",
+  "fecha_extraccion": "2026-11-11",
+  "n_filas_dataset_completo": 19689,
+  "alcance_temporal": [
+    2015,
+    2020
+  ],
+  "justificacion_alcance": "Restricciones de infraestructura de Google Colab",
+  "n_filas": 5283,
+  "n_columnas": 10,
+  "periodo": [
+    2015,
+    2020
+  ],
+  "n_cultivos": 55,
+  "n_estados": 30,
+  "n_temporadas": 6,
+  "pct_nulos_por_columna": {
+    "Crop": 0.0,
+    "Crop_Year": 0.0,
+    "Season": 0.0,
+    "State": 0.0,
+    "Area": 0.0,
+    "Production": 0.0,
+    "Annual_Rainfall": 0.0,
+    "Fertilizer": 0.0,
+    "Pesticide": 0.0,
+    "Yield": 0.0
+  },
+  "duplicados_exactos": 0,
+  "registros_con_clave_repetida": 0,
+  "incoherencias": {
+    "Area <= 0": 0,
+    "Production = 0 (posible cosecha perdida o dato no reportado)": 29,
+    "Yield = 0": 30,
+    "Yield > 0 con Production = 0": 1,
+    "Yield difiere > 5 % de Production/Area": 2517,
+    "Algún valor numérico negativo": 0,
+    "Crop_Year fuera de [2015, 2020]": 0,
+    "Annual_Rainfall = 0": 0
+  },
+  "outliers_IQR_pct": {
+    "Area": 15.73,
+    "Production": 17.21,
+    "Annual_Rainfall": 8.27,
+    "Fertilizer": 15.69,
+    "Pesticide": 15.9,
+    "Yield": 15.37,
+    "Fert_por_ha": 21.12,
+    "Pest_por_ha": 0.0
+  },
+  "outliers_IQR_log1p_pct": {
+    "Area": 0.76,
+    "Production": 0.76,
+    "Annual_Rainfall": 2.39,
+    "Fertilizer": 1.23,
+    "Pesticide": 0.0,
+    "Yield": 9.58,
+    "Fert_por_ha": 21.12,
+    "Pest_por_ha": 0.0
+  },
+  "asimetria": {
+    "Crop_Year": -0.01,
+    "Area": 8.625,
+    "Production": 18.52,
+    "Annual_Rainfall": 1.961,
+    "Fertilizer": 8.732,
+    "Pesticide": 8.686,
+    "Yield": 12.948,
+    "Fert_por_ha": 1.265,
+    "Pest_por_ha": -0.096
+  },
+  "top_correlaciones_spearman": {
+    "Area~Fertilizer": 1.0,
+    "Area~Pesticide": 1.0,
+    "Fertilizer~Pesticide": 1.0,
+    "Area~Production": 0.916,
+    "Production~Fertilizer": 0.916,
+    "Production~Pesticide": 0.916,
+    "Crop_Year~Fert_por_ha": 0.718,
+    "Crop_Year~Pest_por_ha": 0.581
+  },
+  "pearson_area_fertilizer": 0.9991,
+  "cv_intra_anual_fert_ha": 0.0,
+  "kruskal_yield": {
+    "Crop": {
+      "H": 3462.917996,
+      "p_valor": 0.0,
+      "epsilon2": 0.65205
+    },
+    "Season": {
+      "H": 409.055165,
+      "p_valor": 0.0,
+      "epsilon2": 0.076569
+    },
+    "State": {
+      "H": 537.746832,
+      "p_valor": 0.0,
+      "epsilon2": 0.096849
+    }
+  },
+  "chi2": {
+    "Season x State": {
+      "chi2": 3581.597179,
+      "p_valor": 0.0,
+      "V_Cramer": 0.368225
+    },
+    "Season x Crop": {
+      "chi2": 2008.469122,
+      "p_valor": 0.0,
+      "V_Cramer": 0.393137
+    },
+    "Yield_class x Season": {
+      "chi2": 103.829122,
+      "p_valor": 0.0,
+      "V_Cramer": 0.09913
+    },
+    "Yield_class x State": {
+      "chi2": 1178.040183,
+      "p_valor": 0.0,
+      "V_Cramer": 0.333906
+    },
+    "Yield_class x Rain_level": {
+      "chi2": 158.790516,
+      "p_valor": 0.0,
+      "V_Cramer": 0.122591
+    }
+  }
+}

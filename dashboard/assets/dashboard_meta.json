@@ -1,0 +1,3769 @@
+{
+  "generado": "2026-11-26 19:19",
+  "features": [
+    "Area",
+    "Annual_Rainfall",
+    "Fert_por_ha",
+    "Pest_por_ha",
+    "Crop",
+    "Season",
+    "State",
+    "Crop_group"
+  ],
+  "labels": [
+    "Bajo",
+    "Medio",
+    "Alto"
+  ],
+  "resumen": {
+    "registros": 5212,
+    "por_conjunto": {
+      "train": 3649,
+      "test": 782,
+      "val": 781
+    },
+    "cultivos": 54,
+    "estados": 30,
+    "anios": [
+      2015,
+      2020
+    ]
+  },
+  "regresion": {
+    "mejor": "XGBoost",
+    "meta_rmse_val": 4.360221,
+    "metricas": [
+      {
+        "modelo": "Baseline_OLS",
+        "conjunto": "train",
+        "RMSE": 6.967080077844719,
+        "MAE": 1.940474215440737,
+        "R2": 0.6690313591010915,
+        "R2_log": 0.8181367074655841
+      },
+      {
+        "modelo": "Baseline_OLS",
+        "conjunto": "val",
+        "RMSE": 5.450276217328146,
+        "MAE": 1.820205023469806,
+        "R2": 0.7862649388585587,
+        "R2_log": 0.8355034770745617
+      },
+      {
+        "modelo": "ElasticNet",
+        "conjunto": "train",
+        "RMSE": 6.9835415021652425,
+        "MAE": 1.9444631504273502,
+        "R2": 0.6674655233300957,
+        "R2_log": 0.818035256100541
+      },
+      {
+        "modelo": "ElasticNet",
+        "conjunto": "val",
+        "RMSE": 5.483308181205928,
+        "MAE": 1.8265642236517678,
+        "R2": 0.7836663611950926,
+        "R2_log": 0.8351582920464674
+      },
+      {
+        "modelo": "XGBoost",
+        "conjunto": "train",
+        "RMSE": 2.580460317026462,
+        "MAE": 0.10247879610728297,
+        "R2": 0.9545975162534074,
+        "R2_log": 0.9964881456129012
+      },
+      {
+        "modelo": "XGBoost",
+        "conjunto": "val",
+        "RMSE": 2.969382868754898,
+        "MAE": 0.8387023722134299,
+        "R2": 0.9365588361467742,
+        "R2_log": 0.9500870951472793
+      },
+      {
+        "modelo": "MLP_PyTorch",
+        "conjunto": "train",
+        "RMSE": 4.5914150014334805,
+        "MAE": 0.7805990600171991,
+        "R2": 0.8562597685596969,
+        "R2_log": 0.9646377482335771
+      },
+      {
+        "modelo": "MLP_PyTorch",
+        "conjunto": "val",
+        "RMSE": 2.9457700442188233,
+        "MAE": 0.9534117996888511,
+        "R2": 0.9375638051353168,
+        "R2_log": 0.9476071997249775
+      },
+      {
+        "modelo": "Baseline_OLS",
+        "conjunto": "test",
+        "RMSE": 15.210694224026563,
+        "MAE": 2.70791853089822,
+        "R2": 0.343290011540033,
+        "R2_log": 0.7975535951591407
+      },
+      {
+        "modelo": "XGBoost",
+        "conjunto": "test",
+        "RMSE": 13.72421959307501,
+        "MAE": 1.4217867395923318,
+        "R2": 0.4653730261587625,
+        "R2_log": 0.9397815775898103
+      },
+      {
+        "modelo": "MLP_PyTorch",
+        "conjunto": "test",
+        "RMSE": 13.3733340831552,
+        "MAE": 1.5158398741982102,
+        "R2": 0.49236104901755795,
+        "R2_log": 0.9350474082699203
+      }
+    ],
+    "cv": {
+      "ElasticNet": {
+        "RMSE_CV": 5.954537559745326,
+        "parametros": {
+          "alpha": "0.0001",
+          "l1_ratio": "1.0"
+        }
+      },
+      "XGBoost": {
+        "RMSE_CV": 3.3726889738150967,
+        "parametros": {
+          "subsample": "0.7",
+          "reg_lambda": "1",
+          "n_estimators": "900",
+          "min_child_weight": "1",
+          "max_depth": "8",
+          "learning_rate": "0.1",
+          "colsample_bytree": "1.0"
+        }
+      }
+    }
+  },
+  "clasificacion": {
+    "mejor": "XGBoost",
+    "metricas": [
+      {
+        "modelo": "Baseline_Logistica",
+        "conjunto": "train",
+        "Accuracy": 0.5415182241710057,
+        "Precision_macro": 0.531961424631362,
+        "Recall_macro": 0.5390507857567051,
+        "F1_macro": 0.5303324928013832,
+        "AUC_ROC_ovr": 0.7280478936373838
+      },
+      {
+        "modelo": "Baseline_Logistica",
+        "conjunto": "val",
+        "Accuracy": 0.5364916773367477,
+        "Precision_macro": 0.5198735590560686,
+        "Recall_macro": 0.525808825542868,
+        "F1_macro": 0.5166669995026479,
+        "AUC_ROC_ovr": 0.704810424830169
+      },
+      {
+        "modelo": "RandomForest",
+        "conjunto": "train",
+        "Accuracy": 1.0,
+        "Precision_macro": 1.0,
+        "Recall_macro": 1.0,
+        "F1_macro": 1.0,
+        "AUC_ROC_ovr": 1.0
+      },
+      {
+        "modelo": "RandomForest",
+        "conjunto": "val",
+        "Accuracy": 0.7131882202304738,
+        "Precision_macro": 0.7102308290877765,
+        "Recall_macro": 0.7087380313444144,
+        "F1_macro": 0.7090697673198206,
+        "AUC_ROC_ovr": 0.8636803208646517
+      },
+      {
+        "modelo": "XGBoost",
+        "conjunto": "train",
+        "Accuracy": 0.9997259523157029,
+        "Precision_macro": 0.9997311827956988,
+        "Recall_macro": 0.9997276688453159,
+        "F1_macro": 0.9997293159557034,
+        "AUC_ROC_ovr": 0.9999993261909575
+      },
+      {
+        "modelo": "XGBoost",
+        "conjunto": "val",
+        "Accuracy": 0.7131882202304738,
+        "Precision_macro": 0.7111541897810358,
+        "Recall_macro": 0.7097692297160383,
+        "F1_macro": 0.7101609093009863,
+        "AUC_ROC_ovr": 0.8662367407111297
+      },
+      {
+        "modelo": "Baseline_Logistica",
+        "conjunto": "test",
+        "Accuracy": 0.5358056265984654,
+        "Precision_macro": 0.526697241637819,
+        "Recall_macro": 0.5292704199456137,
+        "F1_macro": 0.5241583710350151,
+        "AUC_ROC_ovr": 0.7050121114968441
+      },
+      {
+        "modelo": "XGBoost",
+        "conjunto": "test",
+        "Accuracy": 0.6982097186700768,
+        "Precision_macro": 0.6938025210084033,
+        "Recall_macro": 0.6952265494829301,
+        "F1_macro": 0.6940837443730484,
+        "AUC_ROC_ovr": 0.8608459514011008
+      }
+    ],
+    "cv": {
+      "RandomForest": {
+        "F1_CV": 0.6766366412686857,
+        "parametros": {
+          "n_estimators": "200",
+          "min_samples_leaf": "1",
+          "max_features": "sqrt",
+          "max_depth": "None"
+        }
+      },
+      "XGBoost": {
+        "F1_CV": 0.6655048341500909,
+        "parametros": {
+          "subsample": "0.85",
+          "n_estimators": "900",
+          "min_child_weight": "1",
+          "max_depth": "6",
+          "learning_rate": "0.1",
+          "colsample_bytree": "0.5"
+        }
+      }
+    }
+  },
+  "clustering": {
+    "k": 4,
+    "variables": [
+      "log_Area",
+      "log_Rainfall",
+      "Yield_rel"
+    ],
+    "silueta_por_k": {
+      "2": 0.2754796950732981,
+      "3": 0.27603268775818973,
+      "4": 0.28473767688170143,
+      "5": 0.25123712009985044,
+      "6": 0.25370120955328807,
+      "7": 0.2577749458004711,
+      "8": 0.25232280221808057,
+      "9": 0.24450495195626415,
+      "10": 0.23734153276081585
+    },
+    "silueta_kmeans": 0.28473767688170143,
+    "silueta_aglomerativo": 0.24905177994729016,
+    "silueta_test": 0.2741019910821242,
+    "pca_varianza": [
+      0.4372710167676738,
+      0.3103841934302776
+    ]
+  },
+  "segmentos": [
+    {
+      "cluster": 0,
+      "nombre": "Grandes extensiones productivas",
+      "accion": "Mercado de volumen: maquinaria de gran escala y riego para sostener la productividad en zonas secas.",
+      "n": 1529,
+      "pct": 41.901890929021654,
+      "area_mediana": 56570.0,
+      "lluvia_mediana": 1048.4,
+      "veces_tipico": 1.1539103895247438,
+      "pct_alto": 45.84695879659908,
+      "estados": "Karnataka, Andhra Pradesh, Tamil Nadu",
+      "centroide_std": [
+        0.7723246592662871,
+        -0.5893138340824867,
+        0.39059373202431524
+      ],
+      "centroide_pca": [
+        1.0387548687337584,
+        -0.050161872707511504
+      ]
+    },
+    {
+      "cluster": 1,
+      "nombre": "Brecha de rendimiento",
+      "accion": "Rinden por debajo de lo normal para su cultivo: prioridad para tecnificación, asesoría agronómica y paquetes de insumos.",
+      "n": 711,
+      "pct": 19.484790353521515,
+      "area_mediana": 3080.0,
+      "lluvia_mediana": 1222.7,
+      "veces_tipico": 0.46673189833008455,
+      "pct_alto": 0.0,
+      "estados": "Chhattisgarh, Karnataka, Jammu and Kashmir",
+      "centroide_std": [
+        -0.3201129176734904,
+        -0.16659232404833468,
+        -1.3335067413915762
+      ],
+      "centroide_pca": [
+        -0.6731837530816305,
+        -1.1810921150127094
+      ]
+    },
+    {
+      "cluster": 2,
+      "nombre": "Pequeños de alto desempeño",
+      "accion": "Productores eficientes en áreas pequeñas: herramientas de precisión, reposición y gama premium.",
+      "n": 651,
+      "pct": 17.840504247739105,
+      "area_mediana": 333.0,
+      "lluvia_mediana": 1317.0,
+      "veces_tipico": 1.1841246367564024,
+      "pct_alto": 47.77265745007681,
+      "estados": "Puducherry, Telangana, Uttarakhand",
+      "centroide_std": [
+        -1.1964232369856518,
+        -0.11026676053925111,
+        0.4978439638781264
+      ],
+      "centroide_pca": [
+        -0.49138751404997294,
+        0.7052777870965405
+      ]
+    },
+    {
+      "cluster": 3,
+      "nombre": "Zonas de alta pluviosidad",
+      "accion": "Lluvia muy alta: drenaje, manejo de humedad y protección de cultivos.",
+      "n": 758,
+      "pct": 20.772814469717733,
+      "area_mediana": 2988.0,
+      "lluvia_mediana": 2602.9,
+      "veces_tipico": 0.9901010383298362,
+      "pct_alto": 27.96833773087071,
+      "estados": "Meghalaya, Kerala, Tripura",
+      "centroide_std": [
+        -0.22893968595689598,
+        1.4396244462507093,
+        0.032952118303828326
+      ],
+      "centroide_pca": [
+        -1.0420990375268822,
+        0.6008334931950705
+      ]
+    }
+  ],
+  "shap_pct": {
+    "Crop_group": 36.5,
+    "Crop": 33.5,
+    "State": 13.0,
+    "Area": 6.5,
+    "Season": 4.099999904632568,
+    "Annual_Rainfall": 3.799999952316284,
+    "Rain_anomaly": 1.100000023841858,
+    "Fert_por_ha": 0.8999999761581421,
+    "Pest_por_ha": 0.699999988079071
+  },
+  "mlp": {
+    "capas": [
+      128,
+      64
+    ],
+    "dropout": 0.3,
+    "mejor_epoca": 60,
+    "historia": {
+      "train": [
+        0.9070418538930415,
+        0.343890502482057,
+        0.20717109979006032,
+        0.16198883432868524,
+        0.13786592685661342,
+        0.12903857017854659,
+        0.12408288267304789,
+        0.11939673273218285,
+        0.11304289265400667,
+        0.10728219007385077,
+        0.10435022478100563,
+        0.10139048300313612,
+        0.08980563370874818,
+        0.09650435726693336,
+        0.08940777221008857,
+        0.0915832959840868,
+        0.08373011666188541,
+        0.08318097367498431,
+        0.08196216976830915,
+        0.07666678371197327,
+        0.07663988268698207,
+        0.07678087670560194,
+        0.07756423424067112,
+        0.06675723404518487,
+        0.0717390337148303,
+        0.06938280303542803,
+        0.06874592096900878,
+        0.07021912090062403,
+        0.06532955548211423,
+        0.06628604991293045,
+        0.06258684543497635,
+        0.06207275889732237,
+        0.05958614497656287,
+        0.06080064741951047,
+        0.061278774094996644,
+        0.060364058268869564,
+        0.06177325085823879,
+        0.05712229085258712,
+        0.05935790986999591,
+        0.055776796860321345,
+        0.05644757803085156,
+        0.05575536140063592,
+        0.055293295421979256,
+        0.05253090872774579,
+        0.05666555362428718,
+        0.05455549861599291,
+        0.052435416214259345,
+        0.05338080180298506,
+        0.049356338316436585,
+        0.05236525883565481,
+        0.05198779884007652,
+        0.04815061001778417,
+        0.05031663571381707,
+        0.05529127085039802,
+        0.048437029923126824,
+        0.04707296433552936,
+        0.04768669637680284,
+        0.04748361451079352,
+        0.048921188845183296,
+        0.0506494586421435,
+        0.047192201073576294,
+        0.04549976959968674,
+        0.04801736355337076,
+        0.04481589548688485,
+        0.04363527836855729,
+        0.04633301029523425,
+        0.046747866513593056,
+        0.04517316432498025,
+        0.04738086189889739,
+        0.043190814525868954,
+        0.04562279302806988,
+        0.04549060179476658,
+        0.04477194340348359,
+        0.043988816117054796,
+        0.04427703942678422,
+        0.044252584728596674,
+        0.04156311768570076,
+        0.04200054084021072,
+        0.0455179815183602,
+        0.04585625782013324,
+        0.04236409703160316,
+        0.04435215791210599,
+        0.04046666694698143,
+        0.040426008083853396,
+        0.04383822704883332,
+        0.03970444272437417,
+        0.04048242666149124,
+        0.041844850284756575,
+        0.0398638859910015,
+        0.04185452204627579,
+        0.037905631050693264
+      ],
+      "val_interna": [
+        0.4786793291568756,
+        0.2438904345035553,
+        0.1698010414838791,
+        0.1348261833190918,
+        0.1184847503900528,
+        0.10793827474117279,
+        0.10313095897436142,
+        0.10091274976730347,
+        0.09377189725637436,
+        0.08819333463907242,
+        0.08860518038272858,
+        0.08045903593301773,
+        0.08146568387746811,
+        0.08049333095550537,
+        0.07497672736644745,
+        0.07356858998537064,
+        0.07426422089338303,
+        0.07057534903287888,
+        0.06843570619821548,
+        0.06667143106460571,
+        0.06461812555789948,
+        0.07116115093231201,
+        0.06165223941206932,
+        0.058447085320949554,
+        0.05669458210468292,
+        0.05625653266906738,
+        0.05690890550613403,
+        0.06051333248615265,
+        0.056955486536026,
+        0.05545896664261818,
+        0.057883623987436295,
+        0.058697592467069626,
+        0.05487570911645889,
+        0.05283242091536522,
+        0.0541723370552063,
+        0.05171338841319084,
+        0.051436059176921844,
+        0.05013304948806763,
+        0.05228393152356148,
+        0.052668891847133636,
+        0.051562145352363586,
+        0.056832097470760345,
+        0.051850397139787674,
+        0.05379658564925194,
+        0.050186652690172195,
+        0.052704453468322754,
+        0.05315344035625458,
+        0.04989045858383179,
+        0.05205530673265457,
+        0.05661923065781593,
+        0.04993308335542679,
+        0.05222636088728905,
+        0.04979661852121353,
+        0.05282187834382057,
+        0.05135146901011467,
+        0.052199721336364746,
+        0.05225026234984398,
+        0.050768960267305374,
+        0.04890739545226097,
+        0.0532984621822834,
+        0.0477311946451664,
+        0.054560814052820206,
+        0.05222295597195625,
+        0.05340605601668358,
+        0.050165947526693344,
+        0.050959181040525436,
+        0.04934370517730713,
+        0.05423439294099808,
+        0.04867491498589516,
+        0.05057089030742645,
+        0.05070799961686134,
+        0.05448594689369202,
+        0.04942505806684494,
+        0.04973769560456276,
+        0.05054546147584915,
+        0.05018153786659241,
+        0.04933079704642296,
+        0.04897591844201088,
+        0.04959556832909584,
+        0.05222588777542114,
+        0.05033212900161743,
+        0.051624201238155365,
+        0.0489882193505764,
+        0.04965854436159134,
+        0.05120709538459778,
+        0.04929603636264801,
+        0.048382557928562164,
+        0.055422358214855194,
+        0.05252176895737648,
+        0.052964527159929276,
+        0.048470813781023026
+      ]
+    }
+  },
+  "insumos_anio": {
+    "2015": {
+      "Fert_por_ha": 157.91,
+      "Pest_por_ha": 0.33
+    },
+    "2016": {
+      "Fert_por_ha": 153.25,
+      "Pest_por_ha": 0.35
+    },
+    "2017": {
+      "Fert_por_ha": 157.44,
+      "Pest_por_ha": 0.38
+    },
+    "2018": {
+      "Fert_por_ha": 162.2,
+      "Pest_por_ha": 0.35
+    },
+    "2019": {
+      "Fert_por_ha": 171.76,
+      "Pest_por_ha": 0.37
+    },
+    "2020": {
+      "Fert_por_ha": 193.60999999999999,
+      "Pest_por_ha": 0.37
+    }
+  },
+  "lluvia_estado": {
+    "Andhra Pradesh": 899.2,
+    "Arunachal Pradesh": 2745.5,
+    "Assam": 2155.3,
+    "Bihar": 1194.7,
+    "Chhattisgarh": 1298.9,
+    "Delhi": 678.5,
+    "Goa": 3266.9,
+    "Gujarat": 814.8,
+    "Haryana": 426.8,
+    "Himachal Pradesh": 1217.7,
+    "Jammu and Kashmir": 1279.1,
+    "Jharkhand": 1165.7,
+    "Karnataka": 1147.2,
+    "Kerala": 2924.3,
+    "Madhya Pradesh": 1048.4,
+    "Maharashtra": 1151.1,
+    "Manipur": 1780.0,
+    "Meghalaya": 3870.8,
+    "Mizoram": 2310.8,
+    "Nagaland": 1593.0,
+    "Odisha": 1593.9,
+    "Puducherry": 1582.4,
+    "Punjab": 585.5,
+    "Sikkim": 2949.1,
+    "Tamil Nadu": 970.9,
+    "Telangana": 942.6,
+    "Tripura": 2334.4,
+    "Uttar Pradesh": 792.8,
+    "Uttarakhand": 1378.9,
+    "West Bengal": 1795.8
+  },
+  "lluvia_estado_anio": {
+    "Andhra Pradesh|2015": 940.7,
+    "Andhra Pradesh|2016": 890.0,
+    "Andhra Pradesh|2017": 868.2,
+    "Andhra Pradesh|2018": 1220.5,
+    "Andhra Pradesh|2019": 899.2,
+    "Arunachal Pradesh|2015": 2593.2,
+    "Arunachal Pradesh|2016": 2933.7,
+    "Arunachal Pradesh|2017": 2745.5,
+    "Arunachal Pradesh|2018": 2992.9,
+    "Arunachal Pradesh|2019": 2433.3,
+    "Assam|2015": 2155.3,
+    "Assam|2016": 2296.8,
+    "Assam|2017": 2098.563636,
+    "Assam|2018": 2372.9,
+    "Assam|2019": 2084.7,
+    "Bihar|2015": 874.0,
+    "Bihar|2016": 1205.6,
+    "Bihar|2017": 1112.0,
+    "Bihar|2018": 1521.4,
+    "Bihar|2019": 1194.7,
+    "Chhattisgarh|2015": 1136.0,
+    "Chhattisgarh|2016": 1298.9,
+    "Chhattisgarh|2017": 1124.5,
+    "Chhattisgarh|2018": 1515.5,
+    "Chhattisgarh|2019": 1420.3,
+    "Delhi|2015": 757.7,
+    "Delhi|2016": 747.1,
+    "Delhi|2017": 533.7,
+    "Delhi|2018": 678.5,
+    "Delhi|2019": 546.9,
+    "Goa|2015": 2587.1,
+    "Goa|2016": 3266.9,
+    "Goa|2017": 2772.5,
+    "Goa|2018": 4406.0,
+    "Goa|2019": 4489.5,
+    "Gujarat|2015": 584.3,
+    "Gujarat|2016": 710.5,
+    "Gujarat|2017": 814.8,
+    "Gujarat|2018": 1125.4,
+    "Gujarat|2019": 1067.8,
+    "Haryana|2015": 426.8,
+    "Haryana|2016": 554.7,
+    "Haryana|2017": 417.1,
+    "Haryana|2018": 533.2,
+    "Haryana|2019": 351.8,
+    "Himachal Pradesh|2015": 1223.2,
+    "Himachal Pradesh|2016": 1373.9,
+    "Himachal Pradesh|2017": 1182.2,
+    "Himachal Pradesh|2018": 1052.2,
+    "Himachal Pradesh|2019": 1217.7,
+    "Jammu and Kashmir|2015": 1572.6,
+    "Jammu and Kashmir|2016": 902.8,
+    "Jammu and Kashmir|2017": 1279.1,
+    "Jammu and Kashmir|2018": 1016.3,
+    "Jammu and Kashmir|2019": 1324.1,
+    "Jharkhand|2015": 1085.6,
+    "Jharkhand|2016": 1296.3,
+    "Jharkhand|2017": 1165.7,
+    "Jharkhand|2018": 1222.7,
+    "Jharkhand|2019": 1137.8,
+    "Karnataka|2015": 1024.9,
+    "Karnataka|2016": 1147.2,
+    "Karnataka|2017": 1111.7,
+    "Karnataka|2018": 1419.1,
+    "Karnataka|2019": 1422.3,
+    "Kerala|2015": 2602.9,
+    "Kerala|2016": 2924.3,
+    "Kerala|2017": 2664.8,
+    "Kerala|2018": 2989.7,
+    "Kerala|2019": 3119.2,
+    "Madhya Pradesh|2015": 1000.7,
+    "Madhya Pradesh|2016": 1048.4,
+    "Madhya Pradesh|2017": 800.0,
+    "Madhya Pradesh|2018": 1102.2,
+    "Madhya Pradesh|2019": 1446.7,
+    "Maharashtra|2015": 875.7,
+    "Maharashtra|2016": 1151.1,
+    "Maharashtra|2017": 1129.5,
+    "Maharashtra|2018": 1387.4,
+    "Maharashtra|2019": 1555.8,
+    "Manipur|2015": 1329.1,
+    "Manipur|2016": 2039.8,
+    "Manipur|2017": 1780.0,
+    "Manipur|2018": 1196.9,
+    "Meghalaya|2015": 3870.8,
+    "Meghalaya|2016": 3837.1,
+    "Meghalaya|2017": 4472.3,
+    "Meghalaya|2018": 5649.1,
+    "Meghalaya|2019": 3844.4,
+    "Mizoram|2015": 2310.8,
+    "Mizoram|2016": 2626.8,
+    "Mizoram|2017": 3865.8,
+    "Mizoram|2018": 1665.2,
+    "Mizoram|2019": 2178.5,
+    "Nagaland|2015": 1308.3,
+    "Nagaland|2016": 1959.8,
+    "Nagaland|2017": 1722.1,
+    "Nagaland|2018": 1372.7,
+    "Nagaland|2019": 1593.0,
+    "Odisha|2015": 1210.1,
+    "Odisha|2016": 1460.5,
+    "Odisha|2017": 1344.4,
+    "Odisha|2018": 1635.9,
+    "Odisha|2019": 1593.9,
+    "Puducherry|2015": 1980.6,
+    "Puducherry|2016": 1391.3,
+    "Puducherry|2017": 1582.4,
+    "Puducherry|2018": 1693.9,
+    "Puducherry|2019": 1317.0,
+    "Punjab|2015": 512.6,
+    "Punjab|2016": 635.9,
+    "Punjab|2017": 497.5,
+    "Punjab|2018": 585.5,
+    "Punjab|2019": 653.2,
+    "Sikkim|2015": 2949.1,
+    "Sikkim|2016": 2971.6,
+    "Sikkim|2017": 2873.6,
+    "Sikkim|2018": 3350.1,
+    "Sikkim|2019": 2740.0,
+    "Tamil Nadu|2015": 1201.9,
+    "Tamil Nadu|2016": 912.4,
+    "Tamil Nadu|2017": 970.9,
+    "Tamil Nadu|2018": 986.2,
+    "Tamil Nadu|2019": 910.1,
+    "Telangana|2015": 747.9,
+    "Telangana|2016": 942.6,
+    "Telangana|2017": 815.7,
+    "Telangana|2018": 1350.3,
+    "Telangana|2019": 1031.7,
+    "Tripura|2015": 2334.4,
+    "Tripura|2016": 2475.3,
+    "Tripura|2017": 3326.8,
+    "Tripura|2018": 2169.1,
+    "Tripura|2019": 2252.8,
+    "Uttar Pradesh|2015": 596.7,
+    "Uttar Pradesh|2016": 965.3,
+    "Uttar Pradesh|2017": 652.1,
+    "Uttar Pradesh|2018": 792.8,
+    "Uttar Pradesh|2019": 814.5,
+    "Uttarakhand|2015": 1247.6,
+    "Uttarakhand|2016": 1580.9,
+    "Uttarakhand|2017": 1475.8,
+    "Uttarakhand|2018": 1373.0,
+    "Uttarakhand|2019": 1378.9,
+    "Uttarakhand|2020": 1313.947826,
+    "West Bengal|2015": 1717.0,
+    "West Bengal|2016": 1795.8,
+    "West Bengal|2017": 1830.0,
+    "West Bengal|2018": 2012.6,
+    "West Bengal|2019": 1733.4
+  },
+  "combos": {
+    "Andhra Pradesh": {
+      "Arecanut": [
+        "Kharif"
+      ],
+      "Arhar/Tur": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Bajra": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Banana": [
+        "Whole Year"
+      ],
+      "Black pepper": [
+        "Whole Year"
+      ],
+      "Cashewnut": [
+        "Kharif"
+      ],
+      "Castor seed": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Coriander": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Cotton(lint)": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Cowpea(Lobia)": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Dry chillies": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Ginger": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Gram": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Groundnut": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Guar seed": [
+        "Rabi"
+      ],
+      "Horse-gram": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Jowar": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Linseed": [
+        "Kharif"
+      ],
+      "Maize": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Mesta": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Moong(Green Gram)": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Niger seed": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Oilseeds total": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Onion": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Other  Rabi pulses": [
+        "Rabi"
+      ],
+      "Other Kharif pulses": [
+        "Kharif"
+      ],
+      "Potato": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Ragi": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Rapeseed &Mustard": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Rice": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Safflower": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Sesamum": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Small millets": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Soyabean": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Sugarcane": [
+        "Kharif",
+        "Whole Year"
+      ],
+      "Sunflower": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Sweet potato": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Tapioca": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Tobacco": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Urad": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Wheat": [
+        "Kharif",
+        "Rabi"
+      ],
+      "other oilseeds": [
+        "Kharif"
+      ]
+    },
+    "Arunachal Pradesh": {
+      "Arhar/Tur": [
+        "Kharif"
+      ],
+      "Dry chillies": [
+        "Whole Year"
+      ],
+      "Ginger": [
+        "Whole Year"
+      ],
+      "Groundnut": [
+        "Kharif"
+      ],
+      "Maize": [
+        "Kharif"
+      ],
+      "Masoor": [
+        "Rabi"
+      ],
+      "Moong(Green Gram)": [
+        "Kharif"
+      ],
+      "Oilseeds total": [
+        "Whole Year"
+      ],
+      "Other  Rabi pulses": [
+        "Rabi"
+      ],
+      "Other Kharif pulses": [
+        "Kharif"
+      ],
+      "Peas & beans (Pulses)": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Potato": [
+        "Whole Year"
+      ],
+      "Rapeseed &Mustard": [
+        "Rabi"
+      ],
+      "Rice": [
+        "Kharif"
+      ],
+      "Sesamum": [
+        "Kharif"
+      ],
+      "Small millets": [
+        "Kharif"
+      ],
+      "Soyabean": [
+        "Kharif"
+      ],
+      "Sugarcane": [
+        "Whole Year"
+      ],
+      "Sunflower": [
+        "Kharif"
+      ],
+      "Turmeric": [
+        "Whole Year"
+      ],
+      "Urad": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Wheat": [
+        "Rabi"
+      ],
+      "other oilseeds": [
+        "Kharif"
+      ]
+    },
+    "Assam": {
+      "Arecanut": [
+        "Rabi"
+      ],
+      "Arhar/Tur": [
+        "Kharif"
+      ],
+      "Banana": [
+        "Whole Year"
+      ],
+      "Black pepper": [
+        "Whole Year"
+      ],
+      "Castor seed": [
+        "Kharif"
+      ],
+      "Cotton(lint)": [
+        "Kharif"
+      ],
+      "Dry chillies": [
+        "Whole Year"
+      ],
+      "Ginger": [
+        "Whole Year"
+      ],
+      "Gram": [
+        "Rabi"
+      ],
+      "Jute": [
+        "Kharif"
+      ],
+      "Linseed": [
+        "Rabi"
+      ],
+      "Maize": [
+        "Kharif"
+      ],
+      "Masoor": [
+        "Rabi"
+      ],
+      "Mesta": [
+        "Kharif"
+      ],
+      "Moong(Green Gram)": [
+        "Rabi"
+      ],
+      "Niger seed": [
+        "Kharif"
+      ],
+      "Onion": [
+        "Whole Year"
+      ],
+      "Other  Rabi pulses": [
+        "Rabi"
+      ],
+      "Peas & beans (Pulses)": [
+        "Rabi"
+      ],
+      "Potato": [
+        "Whole Year"
+      ],
+      "Rapeseed &Mustard": [
+        "Rabi"
+      ],
+      "Rice": [
+        "Autumn",
+        "Summer",
+        "Winter"
+      ],
+      "Sesamum": [
+        "Kharif"
+      ],
+      "Small millets": [
+        "Kharif"
+      ],
+      "Sugarcane": [
+        "Whole Year"
+      ],
+      "Sweet potato": [
+        "Whole Year"
+      ],
+      "Tapioca": [
+        "Whole Year"
+      ],
+      "Tobacco": [
+        "Whole Year"
+      ],
+      "Turmeric": [
+        "Whole Year"
+      ],
+      "Urad": [
+        "Rabi"
+      ],
+      "Wheat": [
+        "Rabi"
+      ]
+    },
+    "Bihar": {
+      "Arhar/Tur": [
+        "Kharif"
+      ],
+      "Bajra": [
+        "Kharif"
+      ],
+      "Barley": [
+        "Rabi"
+      ],
+      "Castor seed": [
+        "Kharif"
+      ],
+      "Coriander": [
+        "Whole Year"
+      ],
+      "Garlic": [
+        "Whole Year"
+      ],
+      "Ginger": [
+        "Whole Year"
+      ],
+      "Gram": [
+        "Rabi"
+      ],
+      "Groundnut": [
+        "Kharif"
+      ],
+      "Horse-gram": [
+        "Kharif"
+      ],
+      "Jowar": [
+        "Kharif"
+      ],
+      "Jute": [
+        "Kharif"
+      ],
+      "Khesari": [
+        "Rabi"
+      ],
+      "Linseed": [
+        "Rabi"
+      ],
+      "Maize": [
+        "Autumn",
+        "Rabi",
+        "Summer"
+      ],
+      "Masoor": [
+        "Rabi"
+      ],
+      "Mesta": [
+        "Kharif"
+      ],
+      "Moong(Green Gram)": [
+        "Kharif",
+        "Summer"
+      ],
+      "Onion": [
+        "Rabi"
+      ],
+      "Other  Rabi pulses": [
+        "Rabi"
+      ],
+      "Other Kharif pulses": [
+        "Kharif"
+      ],
+      "Peas & beans (Pulses)": [
+        "Rabi"
+      ],
+      "Potato": [
+        "Rabi",
+        "Winter"
+      ],
+      "Ragi": [
+        "Kharif"
+      ],
+      "Rapeseed &Mustard": [
+        "Rabi"
+      ],
+      "Rice": [
+        "Autumn",
+        "Summer",
+        "Winter"
+      ],
+      "Safflower": [
+        "Rabi"
+      ],
+      "Sannhamp": [
+        "Kharif"
+      ],
+      "Sesamum": [
+        "Kharif"
+      ],
+      "Small millets": [
+        "Kharif"
+      ],
+      "Soyabean": [
+        "Kharif"
+      ],
+      "Sugarcane": [
+        "Whole Year"
+      ],
+      "Sunflower": [
+        "Rabi"
+      ],
+      "Tobacco": [
+        "Whole Year"
+      ],
+      "Turmeric": [
+        "Whole Year"
+      ],
+      "Urad": [
+        "Kharif"
+      ],
+      "Wheat": [
+        "Rabi"
+      ]
+    },
+    "Chhattisgarh": {
+      "Arhar/Tur": [
+        "Kharif"
+      ],
+      "Bajra": [
+        "Kharif",
+        "Whole Year"
+      ],
+      "Barley": [
+        "Rabi"
+      ],
+      "Castor seed": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Coriander": [
+        "Whole Year"
+      ],
+      "Cotton(lint)": [
+        "Whole Year"
+      ],
+      "Dry chillies": [
+        "Whole Year"
+      ],
+      "Garlic": [
+        "Whole Year"
+      ],
+      "Ginger": [
+        "Whole Year"
+      ],
+      "Gram": [
+        "Rabi"
+      ],
+      "Groundnut": [
+        "Kharif"
+      ],
+      "Horse-gram": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Jowar": [
+        "Whole Year"
+      ],
+      "Khesari": [
+        "Rabi"
+      ],
+      "Linseed": [
+        "Rabi"
+      ],
+      "Maize": [
+        "Kharif"
+      ],
+      "Masoor": [
+        "Rabi"
+      ],
+      "Mesta": [
+        "Kharif"
+      ],
+      "Moong(Green Gram)": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Niger seed": [
+        "Kharif"
+      ],
+      "Onion": [
+        "Whole Year"
+      ],
+      "Other  Rabi pulses": [
+        "Rabi"
+      ],
+      "Other Kharif pulses": [
+        "Kharif"
+      ],
+      "Peas & beans (Pulses)": [
+        "Rabi"
+      ],
+      "Potato": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Ragi": [
+        "Kharif"
+      ],
+      "Rapeseed &Mustard": [
+        "Rabi"
+      ],
+      "Rice": [
+        "Kharif"
+      ],
+      "Safflower": [
+        "Rabi"
+      ],
+      "Sannhamp": [
+        "Kharif"
+      ],
+      "Sesamum": [
+        "Kharif"
+      ],
+      "Small millets": [
+        "Kharif"
+      ],
+      "Soyabean": [
+        "Kharif"
+      ],
+      "Sugarcane": [
+        "Whole Year"
+      ],
+      "Sunflower": [
+        "Kharif",
+        "Whole Year"
+      ],
+      "Sweet potato": [
+        "Whole Year"
+      ],
+      "Tobacco": [
+        "Whole Year"
+      ],
+      "Turmeric": [
+        "Whole Year"
+      ],
+      "Urad": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Wheat": [
+        "Rabi"
+      ]
+    },
+    "Delhi": {
+      "Bajra": [
+        "Kharif"
+      ],
+      "Barley": [
+        "Kharif"
+      ],
+      "Gram": [
+        "Rabi"
+      ],
+      "Jowar": [
+        "Kharif"
+      ],
+      "Maize": [
+        "Kharif"
+      ],
+      "Rapeseed &Mustard": [
+        "Rabi"
+      ],
+      "Rice": [
+        "Kharif"
+      ],
+      "Wheat": [
+        "Rabi"
+      ]
+    },
+    "Goa": {
+      "Arecanut": [
+        "Whole Year"
+      ],
+      "Banana": [
+        "Whole Year"
+      ],
+      "Black pepper": [
+        "Whole Year"
+      ],
+      "Cashewnut": [
+        "Whole Year"
+      ],
+      "Groundnut": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Other  Rabi pulses": [
+        "Rabi"
+      ],
+      "Other Kharif pulses": [
+        "Kharif"
+      ],
+      "Rice": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Sugarcane": [
+        "Whole Year"
+      ],
+      "Sweet potato": [
+        "Whole Year"
+      ],
+      "other oilseeds": [
+        "Whole Year"
+      ]
+    },
+    "Gujarat": {
+      "Arhar/Tur": [
+        "Kharif"
+      ],
+      "Bajra": [
+        "Kharif",
+        "Summer"
+      ],
+      "Banana": [
+        "Whole Year"
+      ],
+      "Castor seed": [
+        "Kharif"
+      ],
+      "Cotton(lint)": [
+        "Kharif"
+      ],
+      "Dry chillies": [
+        "Whole Year"
+      ],
+      "Garlic": [
+        "Whole Year"
+      ],
+      "Gram": [
+        "Rabi"
+      ],
+      "Groundnut": [
+        "Kharif",
+        "Summer"
+      ],
+      "Guar seed": [
+        "Kharif",
+        "Whole Year"
+      ],
+      "Jowar": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Maize": [
+        "Kharif",
+        "Rabi",
+        "Summer"
+      ],
+      "Moong(Green Gram)": [
+        "Kharif",
+        "Summer"
+      ],
+      "Moth": [
+        "Kharif"
+      ],
+      "Onion": [
+        "Rabi",
+        "Summer"
+      ],
+      "Other  Rabi pulses": [
+        "Rabi"
+      ],
+      "Other Cereals": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Other Kharif pulses": [
+        "Kharif"
+      ],
+      "Potato": [
+        "Whole Year"
+      ],
+      "Ragi": [
+        "Kharif"
+      ],
+      "Rapeseed &Mustard": [
+        "Rabi"
+      ],
+      "Rice": [
+        "Kharif",
+        "Summer"
+      ],
+      "Sesamum": [
+        "Kharif",
+        "Summer"
+      ],
+      "Small millets": [
+        "Rabi"
+      ],
+      "Soyabean": [
+        "Kharif"
+      ],
+      "Sugarcane": [
+        "Whole Year"
+      ],
+      "Tobacco": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Urad": [
+        "Kharif",
+        "Summer"
+      ],
+      "Wheat": [
+        "Rabi"
+      ]
+    },
+    "Haryana": {
+      "Arhar/Tur": [
+        "Kharif"
+      ],
+      "Bajra": [
+        "Kharif"
+      ],
+      "Barley": [
+        "Rabi"
+      ],
+      "Castor seed": [
+        "Kharif"
+      ],
+      "Coriander": [
+        "Whole Year"
+      ],
+      "Cotton(lint)": [
+        "Kharif"
+      ],
+      "Garlic": [
+        "Whole Year"
+      ],
+      "Ginger": [
+        "Whole Year"
+      ],
+      "Gram": [
+        "Rabi"
+      ],
+      "Groundnut": [
+        "Kharif"
+      ],
+      "Guar seed": [
+        "Kharif"
+      ],
+      "Horse-gram": [
+        "Kharif"
+      ],
+      "Jowar": [
+        "Kharif"
+      ],
+      "Maize": [
+        "Kharif"
+      ],
+      "Masoor": [
+        "Rabi"
+      ],
+      "Moong(Green Gram)": [
+        "Kharif"
+      ],
+      "Moth": [
+        "Kharif"
+      ],
+      "Onion": [
+        "Whole Year"
+      ],
+      "Peas & beans (Pulses)": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Potato": [
+        "Whole Year"
+      ],
+      "Rapeseed &Mustard": [
+        "Rabi"
+      ],
+      "Rice": [
+        "Kharif"
+      ],
+      "Sesamum": [
+        "Kharif"
+      ],
+      "Sugarcane": [
+        "Whole Year"
+      ],
+      "Sunflower": [
+        "Kharif"
+      ],
+      "Turmeric": [
+        "Whole Year"
+      ],
+      "Urad": [
+        "Kharif"
+      ],
+      "Wheat": [
+        "Rabi"
+      ],
+      "other oilseeds": [
+        "Rabi"
+      ]
+    },
+    "Himachal Pradesh": {
+      "Arhar/Tur": [
+        "Kharif"
+      ],
+      "Bajra": [
+        "Kharif"
+      ],
+      "Barley": [
+        "Rabi"
+      ],
+      "Coriander": [
+        "Rabi"
+      ],
+      "Cotton(lint)": [
+        "Kharif"
+      ],
+      "Dry chillies": [
+        "Kharif"
+      ],
+      "Garlic": [
+        "Rabi"
+      ],
+      "Ginger": [
+        "Kharif"
+      ],
+      "Gram": [
+        "Rabi"
+      ],
+      "Groundnut": [
+        "Kharif"
+      ],
+      "Horse-gram": [
+        "Kharif"
+      ],
+      "Linseed": [
+        "Rabi"
+      ],
+      "Maize": [
+        "Kharif"
+      ],
+      "Masoor": [
+        "Rabi"
+      ],
+      "Moong(Green Gram)": [
+        "Kharif"
+      ],
+      "Moth": [
+        "Kharif"
+      ],
+      "Onion": [
+        "Rabi"
+      ],
+      "Other  Rabi pulses": [
+        "Rabi"
+      ],
+      "Other Kharif pulses": [
+        "Kharif"
+      ],
+      "Peas & beans (Pulses)": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Potato": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Ragi": [
+        "Kharif"
+      ],
+      "Rapeseed &Mustard": [
+        "Rabi"
+      ],
+      "Rice": [
+        "Kharif"
+      ],
+      "Sannhamp": [
+        "Kharif"
+      ],
+      "Sesamum": [
+        "Kharif"
+      ],
+      "Small millets": [
+        "Kharif"
+      ],
+      "Soyabean": [
+        "Kharif"
+      ],
+      "Sugarcane": [
+        "Whole Year"
+      ],
+      "Turmeric": [
+        "Kharif"
+      ],
+      "Urad": [
+        "Kharif"
+      ],
+      "Wheat": [
+        "Rabi"
+      ]
+    },
+    "Jammu and Kashmir": {
+      "Bajra": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Barley": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Cotton(lint)": [
+        "Kharif"
+      ],
+      "Cowpea(Lobia)": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Dry chillies": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Garlic": [
+        "Rabi"
+      ],
+      "Ginger": [
+        "Kharif"
+      ],
+      "Gram": [
+        "Kharif"
+      ],
+      "Horse-gram": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Jowar": [
+        "Kharif"
+      ],
+      "Linseed": [
+        "Rabi"
+      ],
+      "Maize": [
+        "Kharif"
+      ],
+      "Masoor": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Moong(Green Gram)": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Moth": [
+        "Kharif"
+      ],
+      "Onion": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Other  Rabi pulses": [
+        "Rabi"
+      ],
+      "Other Cereals": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Other Kharif pulses": [
+        "Kharif"
+      ],
+      "Peas & beans (Pulses)": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Potato": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Ragi": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Rapeseed &Mustard": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Rice": [
+        "Kharif"
+      ],
+      "Sannhamp": [
+        "Kharif"
+      ],
+      "Sesamum": [
+        "Kharif"
+      ],
+      "Small millets": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Sugarcane": [
+        "Kharif",
+        "Whole Year"
+      ],
+      "Tobacco": [
+        "Kharif"
+      ],
+      "Turmeric": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Urad": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Wheat": [
+        "Rabi"
+      ],
+      "other oilseeds": [
+        "Kharif",
+        "Rabi"
+      ]
+    },
+    "Jharkhand": {
+      "Arhar/Tur": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Bajra": [
+        "Kharif"
+      ],
+      "Castor seed": [
+        "Kharif"
+      ],
+      "Gram": [
+        "Rabi"
+      ],
+      "Groundnut": [
+        "Kharif"
+      ],
+      "Horse-gram": [
+        "Kharif"
+      ],
+      "Jowar": [
+        "Kharif"
+      ],
+      "Linseed": [
+        "Rabi"
+      ],
+      "Maize": [
+        "Autumn",
+        "Kharif",
+        "Rabi"
+      ],
+      "Masoor": [
+        "Rabi"
+      ],
+      "Moong(Green Gram)": [
+        "Kharif"
+      ],
+      "Niger seed": [
+        "Kharif"
+      ],
+      "Onion": [
+        "Rabi"
+      ],
+      "Other  Rabi pulses": [
+        "Rabi"
+      ],
+      "Other Kharif pulses": [
+        "Kharif"
+      ],
+      "Peas & beans (Pulses)": [
+        "Rabi"
+      ],
+      "Potato": [
+        "Rabi",
+        "Winter"
+      ],
+      "Ragi": [
+        "Autumn",
+        "Kharif"
+      ],
+      "Rapeseed &Mustard": [
+        "Rabi"
+      ],
+      "Rice": [
+        "Autumn",
+        "Kharif",
+        "Winter"
+      ],
+      "Safflower": [
+        "Rabi"
+      ],
+      "Sesamum": [
+        "Kharif"
+      ],
+      "Soyabean": [
+        "Kharif"
+      ],
+      "Sunflower": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Urad": [
+        "Autumn",
+        "Kharif"
+      ],
+      "Wheat": [
+        "Rabi"
+      ]
+    },
+    "Karnataka": {
+      "Arecanut": [
+        "Whole Year"
+      ],
+      "Arhar/Tur": [
+        "Kharif"
+      ],
+      "Bajra": [
+        "Kharif",
+        "Summer"
+      ],
+      "Black pepper": [
+        "Whole Year"
+      ],
+      "Cardamom": [
+        "Whole Year"
+      ],
+      "Cashewnut": [
+        "Whole Year"
+      ],
+      "Castor seed": [
+        "Kharif"
+      ],
+      "Coriander": [
+        "Whole Year"
+      ],
+      "Cotton(lint)": [
+        "Kharif",
+        "Rabi",
+        "Summer"
+      ],
+      "Cowpea(Lobia)": [
+        "Kharif",
+        "Rabi",
+        "Summer"
+      ],
+      "Dry chillies": [
+        "Kharif",
+        "Rabi",
+        "Summer"
+      ],
+      "Garlic": [
+        "Whole Year"
+      ],
+      "Ginger": [
+        "Whole Year"
+      ],
+      "Gram": [
+        "Rabi"
+      ],
+      "Groundnut": [
+        "Kharif",
+        "Rabi",
+        "Summer"
+      ],
+      "Horse-gram": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Jowar": [
+        "Kharif",
+        "Rabi",
+        "Summer"
+      ],
+      "Linseed": [
+        "Rabi"
+      ],
+      "Maize": [
+        "Kharif",
+        "Rabi",
+        "Summer"
+      ],
+      "Mesta": [
+        "Whole Year"
+      ],
+      "Moong(Green Gram)": [
+        "Kharif",
+        "Rabi",
+        "Summer"
+      ],
+      "Niger seed": [
+        "Kharif"
+      ],
+      "Onion": [
+        "Kharif",
+        "Rabi",
+        "Summer"
+      ],
+      "Other  Rabi pulses": [
+        "Rabi"
+      ],
+      "Other Kharif pulses": [
+        "Kharif"
+      ],
+      "Potato": [
+        "Kharif",
+        "Rabi",
+        "Summer"
+      ],
+      "Ragi": [
+        "Kharif",
+        "Rabi",
+        "Summer"
+      ],
+      "Rapeseed &Mustard": [
+        "Kharif"
+      ],
+      "Rice": [
+        "Kharif",
+        "Rabi",
+        "Summer"
+      ],
+      "Safflower": [
+        "Rabi"
+      ],
+      "Sannhamp": [
+        "Whole Year"
+      ],
+      "Sesamum": [
+        "Kharif"
+      ],
+      "Small millets": [
+        "Kharif"
+      ],
+      "Soyabean": [
+        "Kharif"
+      ],
+      "Sugarcane": [
+        "Whole Year"
+      ],
+      "Sunflower": [
+        "Kharif",
+        "Rabi",
+        "Summer"
+      ],
+      "Sweet potato": [
+        "Whole Year"
+      ],
+      "Tapioca": [
+        "Whole Year"
+      ],
+      "Tobacco": [
+        "Whole Year"
+      ],
+      "Turmeric": [
+        "Whole Year"
+      ],
+      "Urad": [
+        "Kharif",
+        "Rabi",
+        "Summer"
+      ],
+      "Wheat": [
+        "Rabi"
+      ]
+    },
+    "Kerala": {
+      "Arecanut": [
+        "Whole Year"
+      ],
+      "Arhar/Tur": [
+        "Whole Year"
+      ],
+      "Banana": [
+        "Whole Year"
+      ],
+      "Black pepper": [
+        "Whole Year"
+      ],
+      "Cardamom": [
+        "Whole Year"
+      ],
+      "Cashewnut": [
+        "Whole Year"
+      ],
+      "Cotton(lint)": [
+        "Kharif",
+        "Whole Year"
+      ],
+      "Garlic": [
+        "Whole Year"
+      ],
+      "Ginger": [
+        "Whole Year"
+      ],
+      "Gram": [
+        "Whole Year"
+      ],
+      "Groundnut": [
+        "Whole Year"
+      ],
+      "Jowar": [
+        "Whole Year"
+      ],
+      "Maize": [
+        "Whole Year"
+      ],
+      "Other  Rabi pulses": [
+        "Rabi"
+      ],
+      "Other Kharif pulses": [
+        "Kharif"
+      ],
+      "Potato": [
+        "Whole Year"
+      ],
+      "Ragi": [
+        "Whole Year"
+      ],
+      "Rice": [
+        "Autumn",
+        "Summer",
+        "Winter"
+      ],
+      "Sesamum": [
+        "Whole Year"
+      ],
+      "Small millets": [
+        "Kharif",
+        "Rabi",
+        "Whole Year"
+      ],
+      "Soyabean": [
+        "Whole Year"
+      ],
+      "Sugarcane": [
+        "Whole Year"
+      ],
+      "Sunflower": [
+        "Whole Year"
+      ],
+      "Sweet potato": [
+        "Whole Year"
+      ],
+      "Tapioca": [
+        "Whole Year"
+      ],
+      "Tobacco": [
+        "Whole Year"
+      ],
+      "Turmeric": [
+        "Whole Year"
+      ],
+      "Wheat": [
+        "Whole Year"
+      ]
+    },
+    "Madhya Pradesh": {
+      "Arhar/Tur": [
+        "Kharif"
+      ],
+      "Bajra": [
+        "Kharif"
+      ],
+      "Banana": [
+        "Whole Year"
+      ],
+      "Barley": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Castor seed": [
+        "Kharif"
+      ],
+      "Coriander": [
+        "Whole Year"
+      ],
+      "Cotton(lint)": [
+        "Kharif"
+      ],
+      "Dry chillies": [
+        "Whole Year"
+      ],
+      "Garlic": [
+        "Whole Year"
+      ],
+      "Ginger": [
+        "Whole Year"
+      ],
+      "Gram": [
+        "Rabi"
+      ],
+      "Groundnut": [
+        "Kharif",
+        "Summer"
+      ],
+      "Horse-gram": [
+        "Kharif"
+      ],
+      "Jowar": [
+        "Kharif"
+      ],
+      "Jute": [
+        "Kharif"
+      ],
+      "Linseed": [
+        "Rabi"
+      ],
+      "Maize": [
+        "Kharif",
+        "Summer"
+      ],
+      "Masoor": [
+        "Rabi"
+      ],
+      "Mesta": [
+        "Kharif"
+      ],
+      "Moong(Green Gram)": [
+        "Kharif",
+        "Summer"
+      ],
+      "Niger seed": [
+        "Kharif"
+      ],
+      "Onion": [
+        "Whole Year"
+      ],
+      "Other  Rabi pulses": [
+        "Rabi"
+      ],
+      "Other Cereals": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Other Kharif pulses": [
+        "Kharif"
+      ],
+      "Peas & beans (Pulses)": [
+        "Rabi"
+      ],
+      "Potato": [
+        "Whole Year"
+      ],
+      "Rapeseed &Mustard": [
+        "Rabi"
+      ],
+      "Rice": [
+        "Kharif",
+        "Summer"
+      ],
+      "Safflower": [
+        "Rabi"
+      ],
+      "Sesamum": [
+        "Kharif",
+        "Whole Year"
+      ],
+      "Small millets": [
+        "Kharif"
+      ],
+      "Soyabean": [
+        "Kharif"
+      ],
+      "Sugarcane": [
+        "Whole Year"
+      ],
+      "Sunflower": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Sweet potato": [
+        "Whole Year"
+      ],
+      "Turmeric": [
+        "Whole Year"
+      ],
+      "Urad": [
+        "Kharif",
+        "Summer"
+      ],
+      "Wheat": [
+        "Rabi"
+      ]
+    },
+    "Maharashtra": {
+      "Arhar/Tur": [
+        "Kharif"
+      ],
+      "Bajra": [
+        "Kharif"
+      ],
+      "Castor seed": [
+        "Kharif"
+      ],
+      "Cotton(lint)": [
+        "Kharif"
+      ],
+      "Gram": [
+        "Rabi"
+      ],
+      "Groundnut": [
+        "Kharif",
+        "Summer"
+      ],
+      "Jowar": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Linseed": [
+        "Rabi"
+      ],
+      "Maize": [
+        "Kharif",
+        "Rabi",
+        "Summer"
+      ],
+      "Moong(Green Gram)": [
+        "Kharif",
+        "Summer"
+      ],
+      "Niger seed": [
+        "Kharif"
+      ],
+      "Other  Rabi pulses": [
+        "Rabi"
+      ],
+      "Other Cereals": [
+        "Kharif",
+        "Rabi",
+        "Summer"
+      ],
+      "Other Kharif pulses": [
+        "Kharif"
+      ],
+      "Other Summer Pulses": [
+        "Summer"
+      ],
+      "Ragi": [
+        "Kharif"
+      ],
+      "Rapeseed &Mustard": [
+        "Rabi"
+      ],
+      "Rice": [
+        "Kharif",
+        "Summer"
+      ],
+      "Safflower": [
+        "Rabi"
+      ],
+      "Sesamum": [
+        "Kharif",
+        "Rabi",
+        "Summer"
+      ],
+      "Small millets": [
+        "Kharif",
+        "Rabi",
+        "Summer"
+      ],
+      "Soyabean": [
+        "Kharif"
+      ],
+      "Sugarcane": [
+        "Whole Year"
+      ],
+      "Sunflower": [
+        "Kharif",
+        "Rabi",
+        "Summer"
+      ],
+      "Tobacco": [
+        "Whole Year"
+      ],
+      "Urad": [
+        "Kharif"
+      ],
+      "Wheat": [
+        "Rabi"
+      ],
+      "other oilseeds": [
+        "Kharif",
+        "Rabi",
+        "Summer"
+      ]
+    },
+    "Manipur": {
+      "Arhar/Tur": [
+        "Kharif"
+      ],
+      "Banana": [
+        "Whole Year"
+      ],
+      "Cashewnut": [
+        "Whole Year"
+      ],
+      "Cowpea(Lobia)": [
+        "Kharif"
+      ],
+      "Dry chillies": [
+        "Whole Year"
+      ],
+      "Ginger": [
+        "Kharif"
+      ],
+      "Gram": [
+        "Rabi"
+      ],
+      "Groundnut": [
+        "Kharif"
+      ],
+      "Maize": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Masoor": [
+        "Rabi"
+      ],
+      "Moong(Green Gram)": [
+        "Kharif"
+      ],
+      "Other  Rabi pulses": [
+        "Rabi"
+      ],
+      "Other Kharif pulses": [
+        "Kharif"
+      ],
+      "Peas & beans (Pulses)": [
+        "Rabi"
+      ],
+      "Potato": [
+        "Whole Year"
+      ],
+      "Rapeseed &Mustard": [
+        "Rabi"
+      ],
+      "Rice": [
+        "Kharif"
+      ],
+      "Soyabean": [
+        "Kharif"
+      ],
+      "Sugarcane": [
+        "Whole Year"
+      ],
+      "Turmeric": [
+        "Whole Year"
+      ],
+      "Urad": [
+        "Kharif"
+      ],
+      "Wheat": [
+        "Rabi"
+      ]
+    },
+    "Meghalaya": {
+      "Arecanut": [
+        "Rabi"
+      ],
+      "Arhar/Tur": [
+        "Kharif"
+      ],
+      "Banana": [
+        "Kharif"
+      ],
+      "Black pepper": [
+        "Rabi"
+      ],
+      "Cashewnut": [
+        "Rabi"
+      ],
+      "Castor seed": [
+        "Rabi"
+      ],
+      "Coriander": [
+        "Whole Year"
+      ],
+      "Cotton(lint)": [
+        "Kharif"
+      ],
+      "Cowpea(Lobia)": [
+        "Rabi"
+      ],
+      "Dry chillies": [
+        "Whole Year"
+      ],
+      "Ginger": [
+        "Kharif"
+      ],
+      "Gram": [
+        "Rabi"
+      ],
+      "Jute": [
+        "Kharif"
+      ],
+      "Linseed": [
+        "Rabi"
+      ],
+      "Maize": [
+        "Kharif"
+      ],
+      "Masoor": [
+        "Rabi"
+      ],
+      "Mesta": [
+        "Kharif"
+      ],
+      "Onion": [
+        "Rabi"
+      ],
+      "Peas & beans (Pulses)": [
+        "Rabi"
+      ],
+      "Potato": [
+        "Summer",
+        "Winter"
+      ],
+      "Rapeseed &Mustard": [
+        "Rabi"
+      ],
+      "Rice": [
+        "Autumn",
+        "Rabi",
+        "Winter"
+      ],
+      "Sesamum": [
+        "Rabi"
+      ],
+      "Small millets": [
+        "Rabi"
+      ],
+      "Soyabean": [
+        "Kharif"
+      ],
+      "Sugarcane": [
+        "Whole Year"
+      ],
+      "Sweet potato": [
+        "Kharif"
+      ],
+      "Tapioca": [
+        "Kharif"
+      ],
+      "Tobacco": [
+        "Rabi"
+      ],
+      "Turmeric": [
+        "Whole Year"
+      ],
+      "Wheat": [
+        "Rabi"
+      ]
+    },
+    "Mizoram": {
+      "Arhar/Tur": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Cotton(lint)": [
+        "Kharif"
+      ],
+      "Cowpea(Lobia)": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Maize": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Onion": [
+        "Rabi"
+      ],
+      "Other  Rabi pulses": [
+        "Rabi"
+      ],
+      "Other Kharif pulses": [
+        "Kharif"
+      ],
+      "Potato": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Rapeseed &Mustard": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Rice": [
+        "Autumn",
+        "Kharif",
+        "Rabi"
+      ],
+      "Sesamum": [
+        "Kharif"
+      ],
+      "Soyabean": [
+        "Kharif"
+      ],
+      "Sugarcane": [
+        "Whole Year"
+      ],
+      "Tapioca": [
+        "Kharif"
+      ],
+      "Tobacco": [
+        "Kharif",
+        "Whole Year"
+      ],
+      "other oilseeds": [
+        "Kharif"
+      ]
+    },
+    "Nagaland": {
+      "Arhar/Tur": [
+        "Kharif"
+      ],
+      "Bajra": [
+        "Kharif"
+      ],
+      "Barley": [
+        "Rabi"
+      ],
+      "Castor seed": [
+        "Kharif"
+      ],
+      "Cotton(lint)": [
+        "Kharif"
+      ],
+      "Cowpea(Lobia)": [
+        "Kharif"
+      ],
+      "Ginger": [
+        "Kharif"
+      ],
+      "Gram": [
+        "Rabi"
+      ],
+      "Groundnut": [
+        "Kharif"
+      ],
+      "Horse-gram": [
+        "Kharif"
+      ],
+      "Jowar": [
+        "Kharif"
+      ],
+      "Jute": [
+        "Kharif"
+      ],
+      "Linseed": [
+        "Rabi"
+      ],
+      "Maize": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Masoor": [
+        "Rabi"
+      ],
+      "Mesta": [
+        "Kharif"
+      ],
+      "Moong(Green Gram)": [
+        "Kharif"
+      ],
+      "Niger seed": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Other  Rabi pulses": [
+        "Rabi"
+      ],
+      "Other Cereals": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Other Kharif pulses": [
+        "Kharif"
+      ],
+      "Peas & beans (Pulses)": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Potato": [
+        "Rabi"
+      ],
+      "Ragi": [
+        "Kharif"
+      ],
+      "Rapeseed &Mustard": [
+        "Rabi"
+      ],
+      "Rice": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Sesamum": [
+        "Kharif"
+      ],
+      "Small millets": [
+        "Kharif"
+      ],
+      "Soyabean": [
+        "Kharif"
+      ],
+      "Sugarcane": [
+        "Kharif"
+      ],
+      "Sunflower": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Sweet potato": [
+        "Kharif"
+      ],
+      "Tapioca": [
+        "Kharif"
+      ],
+      "Urad": [
+        "Rabi"
+      ],
+      "Wheat": [
+        "Rabi"
+      ],
+      "other oilseeds": [
+        "Kharif"
+      ]
+    },
+    "Odisha": {
+      "Arhar/Tur": [
+        "Kharif"
+      ],
+      "Bajra": [
+        "Kharif"
+      ],
+      "Castor seed": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Coriander": [
+        "Rabi"
+      ],
+      "Cotton(lint)": [
+        "Kharif"
+      ],
+      "Cowpea(Lobia)": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Dry chillies": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Garlic": [
+        "Rabi"
+      ],
+      "Ginger": [
+        "Kharif"
+      ],
+      "Gram": [
+        "Rabi"
+      ],
+      "Groundnut": [
+        "Autumn",
+        "Summer",
+        "Winter"
+      ],
+      "Horse-gram": [
+        "Summer",
+        "Winter"
+      ],
+      "Jowar": [
+        "Kharif"
+      ],
+      "Jute": [
+        "Autumn"
+      ],
+      "Linseed": [
+        "Rabi"
+      ],
+      "Maize": [
+        "Autumn",
+        "Summer",
+        "Winter"
+      ],
+      "Masoor": [
+        "Rabi"
+      ],
+      "Mesta": [
+        "Kharif"
+      ],
+      "Moong(Green Gram)": [
+        "Autumn",
+        "Summer",
+        "Winter"
+      ],
+      "Niger seed": [
+        "Winter"
+      ],
+      "Onion": [
+        "Rabi"
+      ],
+      "Other  Rabi pulses": [
+        "Rabi"
+      ],
+      "Other Kharif pulses": [
+        "Kharif"
+      ],
+      "Peas & beans (Pulses)": [
+        "Rabi"
+      ],
+      "Potato": [
+        "Winter"
+      ],
+      "Ragi": [
+        "Autumn",
+        "Summer",
+        "Winter"
+      ],
+      "Rapeseed &Mustard": [
+        "Winter"
+      ],
+      "Rice": [
+        "Autumn",
+        "Summer",
+        "Winter"
+      ],
+      "Safflower": [
+        "Rabi"
+      ],
+      "Sannhamp": [
+        "Kharif"
+      ],
+      "Sesamum": [
+        "Autumn",
+        "Summer",
+        "Winter"
+      ],
+      "Small millets": [
+        "Kharif"
+      ],
+      "Sugarcane": [
+        "Winter"
+      ],
+      "Sunflower": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Sweet potato": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Tobacco": [
+        "Rabi"
+      ],
+      "Turmeric": [
+        "Kharif"
+      ],
+      "Urad": [
+        "Autumn",
+        "Summer",
+        "Winter"
+      ],
+      "Wheat": [
+        "Summer"
+      ]
+    },
+    "Puducherry": {
+      "Arecanut": [
+        "Kharif"
+      ],
+      "Bajra": [
+        "Kharif",
+        "Rabi",
+        "Summer"
+      ],
+      "Banana": [
+        "Kharif"
+      ],
+      "Black pepper": [
+        "Kharif"
+      ],
+      "Cashewnut": [
+        "Kharif"
+      ],
+      "Cotton(lint)": [
+        "Kharif"
+      ],
+      "Dry chillies": [
+        "Kharif",
+        "Rabi",
+        "Summer"
+      ],
+      "Groundnut": [
+        "Kharif",
+        "Rabi",
+        "Summer"
+      ],
+      "Jowar": [
+        "Kharif",
+        "Summer"
+      ],
+      "Moong(Green Gram)": [
+        "Rabi",
+        "Summer"
+      ],
+      "Onion": [
+        "Kharif",
+        "Summer"
+      ],
+      "Other  Rabi pulses": [
+        "Rabi",
+        "Summer"
+      ],
+      "Other Cereals": [
+        "Rabi"
+      ],
+      "Other Kharif pulses": [
+        "Kharif"
+      ],
+      "Other Summer Pulses": [
+        "Summer"
+      ],
+      "Ragi": [
+        "Kharif",
+        "Rabi",
+        "Summer"
+      ],
+      "Rice": [
+        "Kharif",
+        "Rabi",
+        "Summer"
+      ],
+      "Sesamum": [
+        "Kharif",
+        "Rabi",
+        "Summer"
+      ],
+      "Small millets": [
+        "Kharif"
+      ],
+      "Sugarcane": [
+        "Kharif"
+      ],
+      "Sweet potato": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Tapioca": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Tobacco": [
+        "Rabi"
+      ],
+      "Turmeric": [
+        "Kharif"
+      ],
+      "Urad": [
+        "Kharif",
+        "Rabi",
+        "Summer"
+      ]
+    },
+    "Punjab": {
+      "Arhar/Tur": [
+        "Kharif"
+      ],
+      "Bajra": [
+        "Kharif"
+      ],
+      "Barley": [
+        "Rabi"
+      ],
+      "Cotton(lint)": [
+        "Kharif"
+      ],
+      "Gram": [
+        "Rabi"
+      ],
+      "Groundnut": [
+        "Kharif"
+      ],
+      "Guar seed": [
+        "Kharif"
+      ],
+      "Maize": [
+        "Kharif"
+      ],
+      "Masoor": [
+        "Rabi"
+      ],
+      "Moong(Green Gram)": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Peas & beans (Pulses)": [
+        "Rabi"
+      ],
+      "Rapeseed &Mustard": [
+        "Rabi"
+      ],
+      "Rice": [
+        "Kharif"
+      ],
+      "Sesamum": [
+        "Kharif"
+      ],
+      "Sugarcane": [
+        "Whole Year"
+      ],
+      "Sunflower": [
+        "Rabi"
+      ],
+      "Urad": [
+        "Kharif"
+      ],
+      "Wheat": [
+        "Rabi"
+      ],
+      "other oilseeds": [
+        "Rabi"
+      ]
+    },
+    "Sikkim": {
+      "Barley": [
+        "Rabi"
+      ],
+      "Maize": [
+        "Kharif"
+      ],
+      "Other Cereals": [
+        "Kharif"
+      ],
+      "Other Kharif pulses": [
+        "Kharif"
+      ],
+      "Rapeseed &Mustard": [
+        "Rabi"
+      ],
+      "Rice": [
+        "Kharif"
+      ],
+      "Small millets": [
+        "Kharif"
+      ],
+      "Soyabean": [
+        "Kharif"
+      ],
+      "Urad": [
+        "Kharif"
+      ],
+      "Wheat": [
+        "Rabi"
+      ]
+    },
+    "Tamil Nadu": {
+      "Arecanut": [
+        "Whole Year"
+      ],
+      "Arhar/Tur": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Bajra": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Banana": [
+        "Whole Year"
+      ],
+      "Black pepper": [
+        "Whole Year"
+      ],
+      "Cardamom": [
+        "Whole Year"
+      ],
+      "Cashewnut": [
+        "Whole Year"
+      ],
+      "Castor seed": [
+        "Kharif"
+      ],
+      "Coriander": [
+        "Whole Year"
+      ],
+      "Cotton(lint)": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Cowpea(Lobia)": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Dry chillies": [
+        "Whole Year"
+      ],
+      "Garlic": [
+        "Whole Year"
+      ],
+      "Ginger": [
+        "Whole Year"
+      ],
+      "Gram": [
+        "Rabi"
+      ],
+      "Groundnut": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Horse-gram": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Jowar": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Maize": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Masoor": [
+        "Kharif"
+      ],
+      "Moong(Green Gram)": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Onion": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Other  Rabi pulses": [
+        "Rabi"
+      ],
+      "Other Cereals": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Other Kharif pulses": [
+        "Kharif"
+      ],
+      "Potato": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Ragi": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Rapeseed &Mustard": [
+        "Rabi"
+      ],
+      "Rice": [
+        "Autumn",
+        "Kharif",
+        "Summer",
+        "Winter"
+      ],
+      "Sesamum": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Small millets": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Sugarcane": [
+        "Whole Year"
+      ],
+      "Sunflower": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Sweet potato": [
+        "Whole Year"
+      ],
+      "Tapioca": [
+        "Whole Year"
+      ],
+      "Tobacco": [
+        "Whole Year"
+      ],
+      "Turmeric": [
+        "Whole Year"
+      ],
+      "Urad": [
+        "Kharif",
+        "Rabi"
+      ]
+    },
+    "Telangana": {
+      "Arhar/Tur": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Bajra": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Banana": [
+        "Kharif"
+      ],
+      "Cashewnut": [
+        "Kharif"
+      ],
+      "Castor seed": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Coriander": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Cotton(lint)": [
+        "Kharif"
+      ],
+      "Cowpea(Lobia)": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Dry chillies": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Garlic": [
+        "Rabi"
+      ],
+      "Ginger": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Gram": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Groundnut": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Horse-gram": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Jowar": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Linseed": [
+        "Rabi"
+      ],
+      "Maize": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Masoor": [
+        "Rabi"
+      ],
+      "Moong(Green Gram)": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Onion": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Other  Rabi pulses": [
+        "Rabi"
+      ],
+      "Other Kharif pulses": [
+        "Kharif"
+      ],
+      "Potato": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Ragi": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Rapeseed &Mustard": [
+        "Rabi"
+      ],
+      "Rice": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Safflower": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Sesamum": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Small millets": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Soyabean": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Sugarcane": [
+        "Kharif"
+      ],
+      "Sunflower": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Sweet potato": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Tobacco": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Turmeric": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Urad": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Wheat": [
+        "Kharif",
+        "Rabi"
+      ],
+      "other oilseeds": [
+        "Kharif"
+      ]
+    },
+    "Tripura": {
+      "Arhar/Tur": [
+        "Kharif"
+      ],
+      "Cotton(lint)": [
+        "Kharif"
+      ],
+      "Cowpea(Lobia)": [
+        "Kharif"
+      ],
+      "Gram": [
+        "Rabi"
+      ],
+      "Groundnut": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Jowar": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Jute": [
+        "Kharif"
+      ],
+      "Khesari": [
+        "Rabi"
+      ],
+      "Linseed": [
+        "Rabi"
+      ],
+      "Maize": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Masoor": [
+        "Rabi"
+      ],
+      "Mesta": [
+        "Kharif"
+      ],
+      "Moong(Green Gram)": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Other  Rabi pulses": [
+        "Rabi"
+      ],
+      "Other Kharif pulses": [
+        "Kharif"
+      ],
+      "Peas & beans (Pulses)": [
+        "Rabi"
+      ],
+      "Rapeseed &Mustard": [
+        "Rabi"
+      ],
+      "Rice": [
+        "Autumn",
+        "Kharif",
+        "Summer",
+        "Winter"
+      ],
+      "Sesamum": [
+        "Kharif"
+      ],
+      "Small millets": [
+        "Kharif"
+      ],
+      "Soyabean": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Sugarcane": [
+        "Whole Year"
+      ],
+      "Urad": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Wheat": [
+        "Rabi"
+      ],
+      "other oilseeds": [
+        "Rabi"
+      ]
+    },
+    "Uttar Pradesh": {
+      "Arhar/Tur": [
+        "Kharif"
+      ],
+      "Bajra": [
+        "Kharif"
+      ],
+      "Banana": [
+        "Summer"
+      ],
+      "Barley": [
+        "Rabi"
+      ],
+      "Coriander": [
+        "Rabi"
+      ],
+      "Cotton(lint)": [
+        "Kharif"
+      ],
+      "Dry chillies": [
+        "Kharif"
+      ],
+      "Garlic": [
+        "Rabi"
+      ],
+      "Ginger": [
+        "Kharif"
+      ],
+      "Gram": [
+        "Rabi"
+      ],
+      "Groundnut": [
+        "Kharif"
+      ],
+      "Guar seed": [
+        "Kharif"
+      ],
+      "Jowar": [
+        "Kharif"
+      ],
+      "Linseed": [
+        "Rabi"
+      ],
+      "Maize": [
+        "Kharif",
+        "Rabi",
+        "Summer"
+      ],
+      "Masoor": [
+        "Rabi"
+      ],
+      "Moong(Green Gram)": [
+        "Kharif",
+        "Summer"
+      ],
+      "Onion": [
+        "Rabi",
+        "Summer"
+      ],
+      "Peas & beans (Pulses)": [
+        "Rabi"
+      ],
+      "Potato": [
+        "Rabi"
+      ],
+      "Rapeseed &Mustard": [
+        "Rabi"
+      ],
+      "Rice": [
+        "Kharif",
+        "Summer"
+      ],
+      "Sannhamp": [
+        "Kharif"
+      ],
+      "Sesamum": [
+        "Kharif"
+      ],
+      "Small millets": [
+        "Kharif",
+        "Summer"
+      ],
+      "Soyabean": [
+        "Kharif"
+      ],
+      "Sugarcane": [
+        "Kharif"
+      ],
+      "Sunflower": [
+        "Summer"
+      ],
+      "Sweet potato": [
+        "Kharif"
+      ],
+      "Tobacco": [
+        "Rabi",
+        "Summer"
+      ],
+      "Turmeric": [
+        "Rabi"
+      ],
+      "Urad": [
+        "Kharif",
+        "Summer"
+      ],
+      "Wheat": [
+        "Rabi"
+      ]
+    },
+    "Uttarakhand": {
+      "Arhar/Tur": [
+        "Kharif"
+      ],
+      "Bajra": [
+        "Kharif"
+      ],
+      "Barley": [
+        "Rabi"
+      ],
+      "Garlic": [
+        "Whole Year"
+      ],
+      "Gram": [
+        "Rabi"
+      ],
+      "Groundnut": [
+        "Kharif"
+      ],
+      "Horse-gram": [
+        "Kharif"
+      ],
+      "Jowar": [
+        "Kharif"
+      ],
+      "Linseed": [
+        "Rabi"
+      ],
+      "Maize": [
+        "Kharif",
+        "Summer"
+      ],
+      "Masoor": [
+        "Rabi"
+      ],
+      "Moong(Green Gram)": [
+        "Kharif",
+        "Summer"
+      ],
+      "Moth": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Onion": [
+        "Whole Year"
+      ],
+      "Other  Rabi pulses": [
+        "Rabi"
+      ],
+      "Other Cereals": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Other Kharif pulses": [
+        "Kharif"
+      ],
+      "Other Summer Pulses": [
+        "Summer"
+      ],
+      "Peas & beans (Pulses)": [
+        "Rabi"
+      ],
+      "Potato": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Ragi": [
+        "Kharif"
+      ],
+      "Rapeseed &Mustard": [
+        "Rabi"
+      ],
+      "Rice": [
+        "Kharif",
+        "Summer"
+      ],
+      "Sesamum": [
+        "Kharif"
+      ],
+      "Small millets": [
+        "Kharif"
+      ],
+      "Soyabean": [
+        "Kharif"
+      ],
+      "Sugarcane": [
+        "Whole Year"
+      ],
+      "Sunflower": [
+        "Kharif",
+        "Summer"
+      ],
+      "Tobacco": [
+        "Whole Year"
+      ],
+      "Turmeric": [
+        "Whole Year"
+      ],
+      "Urad": [
+        "Kharif",
+        "Summer"
+      ],
+      "Wheat": [
+        "Rabi"
+      ],
+      "other oilseeds": [
+        "Kharif",
+        "Rabi"
+      ]
+    },
+    "West Bengal": {
+      "Arhar/Tur": [
+        "Rabi"
+      ],
+      "Bajra": [
+        "Kharif"
+      ],
+      "Barley": [
+        "Rabi"
+      ],
+      "Castor seed": [
+        "Kharif"
+      ],
+      "Cotton(lint)": [
+        "Kharif"
+      ],
+      "Gram": [
+        "Rabi"
+      ],
+      "Groundnut": [
+        "Autumn",
+        "Rabi",
+        "Summer"
+      ],
+      "Horse-gram": [
+        "Rabi"
+      ],
+      "Jowar": [
+        "Autumn"
+      ],
+      "Jute": [
+        "Kharif"
+      ],
+      "Khesari": [
+        "Rabi"
+      ],
+      "Linseed": [
+        "Rabi"
+      ],
+      "Maize": [
+        "Autumn",
+        "Rabi",
+        "Summer"
+      ],
+      "Masoor": [
+        "Rabi"
+      ],
+      "Mesta": [
+        "Kharif"
+      ],
+      "Moong(Green Gram)": [
+        "Kharif",
+        "Rabi",
+        "Summer"
+      ],
+      "Moth": [
+        "Rabi"
+      ],
+      "Niger seed": [
+        "Kharif"
+      ],
+      "Other  Rabi pulses": [
+        "Rabi"
+      ],
+      "Other Kharif pulses": [
+        "Kharif"
+      ],
+      "Peas & beans (Pulses)": [
+        "Rabi"
+      ],
+      "Potato": [
+        "Rabi",
+        "Summer"
+      ],
+      "Ragi": [
+        "Autumn"
+      ],
+      "Rapeseed &Mustard": [
+        "Rabi"
+      ],
+      "Rice": [
+        "Autumn",
+        "Summer",
+        "Winter"
+      ],
+      "Safflower": [
+        "Kharif"
+      ],
+      "Sannhamp": [
+        "Kharif"
+      ],
+      "Sesamum": [
+        "Autumn",
+        "Summer",
+        "Winter"
+      ],
+      "Small millets": [
+        "Autumn",
+        "Rabi"
+      ],
+      "Soyabean": [
+        "Kharif"
+      ],
+      "Sugarcane": [
+        "Whole Year"
+      ],
+      "Sunflower": [
+        "Kharif"
+      ],
+      "Tobacco": [
+        "Whole Year"
+      ],
+      "Urad": [
+        "Kharif",
+        "Rabi"
+      ],
+      "Wheat": [
+        "Rabi"
+      ]
+    }
+  }
+}

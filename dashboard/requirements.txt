@@ -1,0 +1,10 @@
+# Solo el dashboard (Streamlit Community Cloud lee este archivo primero)
+streamlit==1.67.0
+plotly==5.24.1
+pandas==2.2.3
+numpy==2.4.6
+scipy==1.16.3
+scikit-learn==1.6.1
+xgboost==3.4.1
+joblib==1.6.0
+pyarrow==23.0.1
